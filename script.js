@@ -10,7 +10,7 @@ function Bird() {
 
   this.showBird = function() {
     fill("yellow");
-    ellipse(this.x, this.y, 20, 20);
+    ellipse(this.x, this.y,20, 20);
   }
 
   this.up = function() {
