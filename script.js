@@ -1,16 +1,23 @@
-var bird;
+  var bird;
+
+let img
+
+function preload() {
+  img = loadImage("./images/download2.png")
+}
 
 function Bird() {
   this.y = width/2;
   this.x = 20;
 
-  this.gravity = 0.2;
+  this.gravity = 0.1;
   this.lift = -5
   this.vy = 0;
 
   this.showBird = function() {
-    fill("yellow");
-    ellipse(this.x, this.y,20, 20);
+    //fill("yellow");
+    //ellipse(this.x, this.y, 20, 20);
+    image(img, this.x, this.y, 20, 20);   
   }
 
   this.up = function() {
@@ -30,12 +37,12 @@ function Bird() {
 }
 
 function setup() {
-	createCanvas(300, 300);
+	createCanvas(300, 300,);
   bird = new Bird();
 }
 
 function draw() {
-  background(0);
+  background('green');
   bird.fall();
   bird.showBird();
 }
