@@ -13,18 +13,18 @@ class Bird {
     this.gravity = 0.1;
     this.lift = -5
     this.vy = 0;
-
-    this.showBird = function() {
+  }
+    showBird() {
       //fill("yellow");
       //ellipse(this.x, this.y, 20, 20);
       image(img, this.x, this.y, 50, 50);   
     }
 
-    this.up = function() {
+    up() {
       this.vy += this.lift;
     }
 
-    this.fall = function() {
+    fall() {
       this.vy += this.gravity;
       this.y += this.vy;
 
@@ -39,4 +39,3 @@ class Bird {
       }
     }
     }
-  }
