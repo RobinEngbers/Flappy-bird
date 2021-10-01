@@ -8,7 +8,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(img2);
   bird.fall();
   bird.showBird();
 

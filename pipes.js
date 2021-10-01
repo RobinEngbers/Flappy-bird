@@ -1,9 +1,9 @@
-class Pipe {
-  constructor(top, x, w, speed, show, update, gap, min_height, max_height, offscreen) {
+ class Pipe {
+  constructor(top, x, w, speed, show, update, gap, min_height, max_height, hit) {
     this.x = width;
     this.w = 90;
     this.gap = 100;
-    this.min_height = 100;
+    this.min_height = 40;
     this.max_height = height - this.min_height - this.gap;
     this.top = floor(random(this.min_height, this.max_height));
     this.speed = 5;
@@ -21,5 +21,4 @@ class Pipe {
     update() {
       this.x -= this.speed;
     }
-  
 } 
