@@ -1,4 +1,4 @@
-var bird;
+  var bird;
 var pipes = [];
 
 function setup() {
@@ -21,6 +21,11 @@ function draw() {
   pipes.forEach((p) => {
     p.show();
     p.update();
+    
+    if(p.hits(bird)) {
+      console.log("hit");
+      pipes.push(0);
+    }     
   });
 
   // for (var i = pipes.length - 1; i < pipes.length; i++) {    

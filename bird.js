@@ -17,7 +17,7 @@ class Bird {
   }
     showBird() {
       //ellipse(this.x, this.y, 20, 20)
-      image(img, this.x, this.y, 50, 50);
+      image(img, this.x, this.y, 40, 40);
     }
 
     up() {
@@ -37,9 +37,5 @@ class Bird {
         this.y = 0;
         this.vy = 0;
       }
-    }
-
-    stopBird() {
-      
     }
     }
