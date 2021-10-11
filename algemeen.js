@@ -1,5 +1,6 @@
-  var bird;
+var bird;
 var pipes = [];
+playing = false;
 
 function setup() {
   createCanvas(400, 400);
@@ -22,9 +23,17 @@ function draw() {
     p.show();
     p.update();
     
-    if(p.hits(bird)) {
+    if(p.hit(bird)) {
       console.log("hit");
-      pipes.push(0);
+      strokeWeight(8);
+      rectMode(CENTER);
+      fill(255);
+      rect(width / 2, height / 2, width - 80, 80);
+      fill(0);
+      text("Score: " +
+      bird.score, width / 2, height / 2);
+      playing = false;
+      noLoop();
     }     
   });
 
