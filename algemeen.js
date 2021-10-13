@@ -30,13 +30,13 @@ function draw() {
     playing = true;
     if(p.hit(bird)) {
       console.log("hit");
-      // strokeWeight(8);
-      // rectMode(CENTER);
-      // fill(255);
-      // rect(width / 2, height / 2, width - 80, 80);
-      // fill(0);
-      // text("Score: " +
-      //   bird.score, width / 2, height / 2);
+      strokeWeight(8);
+      rectMode(CENTER);
+      fill(255);
+      rect(width / 2, height / 2, width - 80, 80);
+      fill(0);
+      text("Score: " +
+        score, width / 3.3, height / 1.9);
       playing = false;
       noLoop();
     }
@@ -44,7 +44,7 @@ function draw() {
 
   if (playing) {
     textSize(50);
-    text(score, width / 2, height / 5);
+    text(score, width / 2, height / 5,);
 }
 
 }
