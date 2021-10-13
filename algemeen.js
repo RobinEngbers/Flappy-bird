@@ -1,3 +1,4 @@
+let score = 0;
 var bird;
 var pipes = [];
 playing = false;
@@ -19,28 +20,33 @@ function draw() {
     pipes.push(new Pipe());
   }
 
+  if (frameCount % 100 == 5 && frameCount >= 20) {
+    score++;
+  }
+
   pipes.forEach((p) => {
     p.show();
     p.update();
-    
+    playing = true;
     if(p.hit(bird)) {
       console.log("hit");
-      strokeWeight(8);
-      rectMode(CENTER);
-      fill(255);
-      rect(width / 2, height / 2, width - 80, 80);
-      fill(0);
-      text("Score: " +
-      bird.score, width / 2, height / 2);
+      // strokeWeight(8);
+      // rectMode(CENTER);
+      // fill(255);
+      // rect(width / 2, height / 2, width - 80, 80);
+      // fill(0);
+      // text("Score: " +
+      //   bird.score, width / 2, height / 2);
       playing = false;
       noLoop();
-    }     
+    }
   });
 
-  // for (var i = pipes.length - 1; i < pipes.length; i++) {    
-  //   pipes[i].show();
-  //   pipes[i].update();
-  // }
+  if (playing) {
+    textSize(50);
+    text(score, width / 2, height / 5);
+}
+
 }
 function keyPressed() {
   if (key == " ") {

@@ -7,10 +7,10 @@ function preload() {
 }
 
 class Bird {
-  constructor(y, x, gravity, lift, vy, showBird, up, fall) {
+  constructor(y, x, gravity, lift, vy, showBird, up, fall, score) {
     this.y = width/2;
     this.x = 20;
-
+    this.score = 0
     this.gravity = 0.1;
     this.lift = -5;
     this.vy = 0;
