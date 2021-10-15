@@ -2,6 +2,7 @@ let score = 0;
 var bird;
 var pipes = [];
 playing = false;
+var gameState = 0;
 
 function setup() {
   createCanvas(400, 400);
@@ -9,7 +10,26 @@ function setup() {
   pipes.push(new Pipe());
 }
 
+
+
 function draw() {
+  if(gameState == 0){
+    startGame();
+  } else if(gameState == 1){
+    playGame();
+  }else if(gameState == 2){
+    finishGame();
+  }
+  function startGame(){
+    background(0,255,0);
+    textAlign(CENTER);
+    textSize(20);
+    text("CLICK TO START GAME", width/2,height/2);
+  }
+
+  function playGame() {
+
+
   background(img2);
   bird.fall();
   bird.showBird();
@@ -41,7 +61,7 @@ function draw() {
       noLoop();
     }
   });
-
+  }
   if (playing) {
     textSize(50);
     text(score, width / 2, height / 5,);
@@ -51,5 +71,11 @@ function draw() {
 function keyPressed() {
   if (key == " ") {
     bird.up();
+  }
+}
+
+function mousePressed(){
+  if(gameState == 0){
+    gameState += 1;
   }
 }
